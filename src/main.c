@@ -85,7 +85,7 @@ main(void)
   }
 
   /* file header */
-  fprintf(output, "P3\n%d %d\n", 80, 60);
+  fprintf(output, "P3\n%d\n%d\n255\n", 80, 60);
 
   for (x = 0.0f; x <= 60.0f; x += 1.0f) {
     for (y = 0.0f; y <= 80.0f; y += 1.0f) {
