@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include "cam/persp.h"
-#include "geom/vector.h"
-#include "geom/ray.h"
 #include "geom/isect.h"
+#include "geom/ray.h"
+#include "geom/vector.h"
 #include "obj/object.h"
 #include "obj/plane.h"
 #include "obj/sphere.h"
@@ -16,22 +17,22 @@ static persp cam;
 
 /* Scene objects. */
 static object objs[2];
-/* static sphere sp; */
+static sphere sp;
 static plane pl;
 
 static void
-clamp(unsigned int* x, unsigned int lo, unsigned int hi)
+clamp(uint32_t* x, uint32_t lo, uint32_t hi)
 {
   if (*x > hi) *x = hi;
   if (*x < lo) *x = lo;
 }
 
-static unsigned int
-scale(float x, unsigned int s)
+static uint32_t
+scale(float x, uint32_t s)
 {
-  unsigned int y;
+  uint32_t y;
 
-  y = (unsigned int)(x * (float)s);
+  y = (uint32_t)(x * (float)s);
   clamp(&y, 0, s);
   return y;
 }
@@ -44,7 +45,7 @@ init_camera(void)
   vector_init(&cam.ps_for, 0.0f, 0.0f, 1.0f);
   cam.ps_fov = 20.0f;
 
-  cam_persp_setup(&cam, 60.0f / 80.0f);
+  cam_persp_setup(&cam, 80.0f / 60.0f);
 }
 
 static void
@@ -69,8 +70,8 @@ int
 main(void)
 {
   FILE* output;
-  float x;
-  float y;
+  uint32_t x;
+  uint32_t y;
   vector c;
   ray r;
   isect i;
@@ -84,12 +85,11 @@ main(void)
     exit(1);
   }
 
-  /* file header */
   fprintf(output, "P3\n%d\n%d\n255\n", 80, 60);
 
-  for (x = 0.0f; x <= 60.0f; x += 1.0f) {
-    for (y = 0.0f; y <= 80.0f; y += 1.0f) {
-      cam_persp_primary(&cam, x, y, &r);
+  for (y = 0; y < 60; y++) {
+    for (x = 0; x < 80; x++) {
+      cam_persp_primary(&cam, (float)x, (float)y, &r);
       scene_array_intersect(objs, 1, &r, &i);
       proc_debug_compute(&r, &i, &c);
       fprintf(output, "%u %u %u ",
