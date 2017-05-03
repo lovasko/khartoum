@@ -1,4 +1,4 @@
-#include "plane.h"
+#include "obj/plane.h"
 
 void
 plane_intersect(plane* p, ray* r, float* t)

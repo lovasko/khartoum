@@ -1,6 +1,6 @@
 #include <math.h>
 
-#include "vector.h"
+#include "geom/vector.h"
 
 void
 vector_init(vector* v, float x, float y, float z)
