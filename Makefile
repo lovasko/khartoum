@@ -1,7 +1,7 @@
 CC=clang
 STANDARDS=-ansi -pedantic
 WARNINGS=-Wall -Wextra -Weverything
-CFLAGS=-g -O3 -fPIC -Isrc $(STANDARDS) $(WARNINGS)
+CFLAGS=-Ofast -fPIC -Isrc $(STANDARDS) $(WARNINGS)
 LDFLAGS=-lm
 EXECUTABLE=bin/run
 OBJECTS=obj/cam_persp.o   \
