@@ -45,7 +45,7 @@ init_camera(void)
   vector_init(&cam.ps_for, 0.0f, 0.0f, 1.0f);
   cam.ps_fov = 20.0f;
 
-  cam_persp_setup(&cam, 80.0f / 60.0f);
+  cam_persp_setup(&cam, 1.0f);
 }
 
 static void
@@ -85,10 +85,10 @@ main(void)
     exit(1);
   }
 
-  fprintf(output, "P3\n%d\n%d\n255\n", 80, 60);
+  fprintf(output, "P3\n%d\n%d\n255\n", 500, 500);
 
-  for (y = 0; y < 60; y++) {
-    for (x = 0; x < 80; x++) {
+  for (y = 0; y < 500; y++) {
+    for (x = 0; x < 500; x++) {
       cam_persp_primary(&cam, (float)x, (float)y, &r);
       scene_array_intersect(objs, 1, &r, &i);
       proc_debug_compute(&r, &i, &c);
