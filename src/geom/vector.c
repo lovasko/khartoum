@@ -60,9 +60,7 @@ vector_norm(vector* v)
           + v->vc_y * v->vc_y
           + v->vc_z * v->vc_z);
 
-  v->vc_x *= f;
-  v->vc_y *= f;
-  v->vc_z *= f;
+  vector_mul(v, f);
 }
 
 void
