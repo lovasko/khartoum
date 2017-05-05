@@ -1,5 +1,5 @@
-#ifndef SVITC_GEOM_VECTOR_H
-#define SVITC_GEOM_VECTOR_H
+#ifndef ZIAR_GEOM_VECTOR_H
+#define ZIAR_GEOM_VECTOR_H
 
 typedef struct vector {
   float vc_x; /** Axis X component. */

@@ -1,5 +1,5 @@
-#ifndef SVITC_OBJ_SPHERE_H
-#define SVITC_OBJ_SPHERE_H
+#ifndef ZIAR_OBJ_SPHERE_H
+#define ZIAR_OBJ_SPHERE_H
 
 #include "geom/vector.h"
 #include "geom/ray.h"

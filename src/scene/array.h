@@ -1,5 +1,5 @@
-#ifndef SVITC_SCENE_ARRAY_H
-#define SVITC_SCENE_ARRAY_H
+#ifndef ZIAR_SCENE_ARRAY_H
+#define ZIAR_SCENE_ARRAY_H
 
 #include "geom/ray.h"
 #include "geom/isect.h"

@@ -1,5 +1,5 @@
-#ifndef SVITC_PROC_DEBUG_H
-#define SVITC_PROC_DEBUG_H
+#ifndef ZIAR_PROC_DEBUG_H
+#define ZIAR_PROC_DEBUG_H
 
 #include "geom/isect.h"
 #include "geom/ray.h"

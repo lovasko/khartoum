@@ -1,5 +1,5 @@
-#ifndef SVITC_OBJ_OBJECT_H
-#define SVITC_OBJ_OBJECT_H
+#ifndef ZIAR_OBJ_OBJECT_H
+#define ZIAR_OBJ_OBJECT_H
 
 #define OBJ_SPHERE 1
 #define OBJ_PLANE  2

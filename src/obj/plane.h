@@ -1,5 +1,5 @@
-#ifndef SVITC_OBJ_PLANE_H
-#define SVITC_OBJ_PLANE_H
+#ifndef ZIAR_OBJ_PLANE_H
+#define ZIAR_OBJ_PLANE_H
 
 #include "geom/vector.h"
 #include "geom/ray.h"

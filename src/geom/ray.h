@@ -1,5 +1,5 @@
-#ifndef SVITC_GEOM_RAY_H
-#define SVITC_GEOM_RAY_H
+#ifndef ZIAR_GEOM_RAY_H
+#define ZIAR_GEOM_RAY_H
 
 #include "geom/vector.h"
 

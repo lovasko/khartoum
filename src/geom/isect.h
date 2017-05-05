@@ -1,5 +1,5 @@
-#ifndef SVITC_GEOM_ISECT_H
-#define SVITC_GEOM_ISECT_H
+#ifndef ZIAR_GEOM_ISECT_H
+#define ZIAR_GEOM_ISECT_H
 
 #include "geom/vector.h"
 

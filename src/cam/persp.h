@@ -1,5 +1,5 @@
-#ifndef SVITC_CAM_PERSP_H
-#define SVITC_CAM_PERSP_H
+#ifndef ZIAR_CAM_PERSP_H
+#define ZIAR_CAM_PERSP_H
 
 #include "geom/vector.h"
 #include "geom/ray.h"
