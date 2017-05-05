@@ -17,6 +17,7 @@ cam_persp_setup(persp* c, float ratio)
 
   vector_copy(&c->ps_hst, &left);
   vector_mul(&c->ps_hst, -width);
+
   vector_copy(&c->ps_vst, &c->ps_up);
   vector_mul(&c->ps_vst, -height);
 }
