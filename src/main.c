@@ -37,6 +37,12 @@ scale(float x, uint32_t s)
   return y;
 }
 
+static float
+coord(long val, long max)
+{
+  return ((((float)val + 0.5f)/(float)max)*2.0f)-1.0f;
+}
+
 static void
 init_camera(void)
 {
@@ -89,7 +95,7 @@ main(void)
 
   for (y = 0; y < 500; y++) {
     for (x = 0; x < 500; x++) {
-      cam_persp_primary(&cam, (float)x, (float)y, &r);
+      cam_persp_primary(&cam, coord(x, 500), coord(y, 500), &r);
       scene_array_intersect(objs, 1, &r, &i);
       proc_debug_compute(&r, &i, &c);
       fprintf(output, "%u %u %u ",
