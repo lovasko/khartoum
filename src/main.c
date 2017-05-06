@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <math.h>
 
 #include "cam/persp.h"
 #include "geom/isect.h"
@@ -46,10 +47,10 @@ coord(long val, long max)
 static void
 init_camera(void)
 {
-  vector_init(&cam.ps_pos, 0.0f, 2.0f, -20.0f);
+  vector_init(&cam.ps_pos, 0.0f, 2.0f, 0.0f);
   vector_init(&cam.ps_up,  0.0f, 1.0f, 0.0f);
   vector_init(&cam.ps_for, 0.0f, 0.0f, 1.0f);
-  cam.ps_fov = 20.0f;
+  cam.ps_fov = (float)M_PI/2.0f;
 
   cam_persp_setup(&cam, 1.0f);
 }
