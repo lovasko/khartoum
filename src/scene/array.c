@@ -27,7 +27,7 @@ scene_array_intersect(object* objs, unsigned int nobjs, ray* r, isect* i)
   }
 
   if (i->is_t < FLT_MAX) {
-    ray_point(r, t, &p);
+    ray_point(r, i->is_t, &p);
     object_normal(o, &p, &i->is_nor);
   }
 }
