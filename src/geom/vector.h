@@ -19,7 +19,7 @@ void vector_mul(vector* v, float s);
 void vector_norm(vector* v);
 
 /* Vector products. */
-void vector_dot(vector* v, vector* u, float* d);
-void vector_cross(vector* v, vector* u, vector* c);
+void vector_dot(float* d, vector* v, vector* u);
+void vector_cross(vector* c, vector* v, vector* u);
 
 #endif

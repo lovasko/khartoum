@@ -7,14 +7,14 @@ plane_intersect(plane* p, ray* r, float* t)
   float angle;
 
   *t = 0.0f;
-  vector_dot(&p->pl_nor, &r->ry_dir, &angle);
+  vector_dot(&angle, &p->pl_nor, &r->ry_dir);
 
   if (angle == 0.0f)
     return;
 
   vector_copy(&ori, &r->ry_ori);
   vector_sub(&ori,  &p->pl_pos);
-  vector_dot(&ori,  &p->pl_nor, t);
+  vector_dot(t, &ori,  &p->pl_nor);
 
   *t *= -1.0f/angle;
 }

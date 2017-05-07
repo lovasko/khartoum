@@ -9,7 +9,7 @@ cam_persp_setup(persp* c, float ratio)
   float width;
   float height;
 
-  vector_cross(&c->ps_for, &c->ps_up, &left);
+  vector_cross(&left, &c->ps_for, &c->ps_up);
   vector_norm(&left);
 
   width = 1.0f / tanf(c->ps_fov / 2.0f);

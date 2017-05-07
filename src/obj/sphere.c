@@ -19,12 +19,12 @@ sphere_intersect(sphere* s, ray* r, float* t)
   float t2;
 
   *t = 0.0f;
-  vector_dot(&r->ry_dir, &r->ry_dir, &a);
-  vector_dot(&r->ry_dir, &r->ry_ori, &b1);
-  vector_dot(&r->ry_dir, &s->sp_pos, &b2);
-  vector_dot(&r->ry_ori, &r->ry_ori, &c1);
-  vector_dot(&s->sp_pos, &r->ry_ori, &c2);
-  vector_dot(&s->sp_pos, &s->sp_pos, &c3);
+  vector_dot(&a,  &r->ry_dir, &r->ry_dir);
+  vector_dot(&b1, &r->ry_dir, &r->ry_ori);
+  vector_dot(&b2, &r->ry_dir, &s->sp_pos);
+  vector_dot(&c1, &r->ry_ori, &r->ry_ori);
+  vector_dot(&c2, &s->sp_pos, &r->ry_ori);
+  vector_dot(&c3, &s->sp_pos, &s->sp_pos);
 
   b = (2.0f * b1) - (2.0f * b2);
   c = c1 - (2.0f * c2) + c3 - (s->sp_rad * s->sp_rad);
