@@ -50,7 +50,7 @@ init_camera(void)
   vector_init(&cam.ps_pos, 0.0f, 2.0f, 0.0f);
   vector_init(&cam.ps_up,  0.0f, 1.0f, 0.0f);
   vector_init(&cam.ps_for, 0.0f, 0.0f, 1.0f);
-  cam.ps_fov = (float)M_PI/2.0f;
+  cam.ps_fov = 3.1415f/2.0f;
 
   cam_persp_setup(&cam, 1.0f);
 }
