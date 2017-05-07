@@ -2,9 +2,9 @@
 #include <math.h>
 #include <float.h>
 
-#include "scene/array.h"
 #include "geom/ray.h"
 #include "obj/object.h"
+#include "scene/array.h"
 
 void
 scene_array_intersect(object* objs, unsigned int nobjs, ray* r, isect* i)
