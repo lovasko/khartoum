@@ -1,11 +1,11 @@
 #ifndef ZIAR_OBJ_OBJECT_H
 #define ZIAR_OBJ_OBJECT_H
 
-#define OBJ_SPHERE 1
-#define OBJ_PLANE  2
-
 #include "geom/ray.h"
 #include "geom/vector.h"
+
+#define OBJ_SPHERE 0
+#define OBJ_PLANE  1
 
 typedef struct object {
   void* ob_geo; /** Object geometry.      */
