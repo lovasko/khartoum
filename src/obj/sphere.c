@@ -6,38 +6,50 @@
 void
 sphere_intersect(sphere* s, ray* r, float* t)
 {
+  float a;
   float b;
-  float o;
-  float dist;
-  float det;
-  vector v;
+  float c;
+  float d;
+  float b1;
+  float b2;
+  float c1;
+  float c2;
+  float c3;
+  float t1;
+  float t2;
 
-  *t = FLT_MAX;
+  *t = 0.0f;
+  vector_dot(&r->ry_dir, &r->ry_dir, &a);
+  vector_dot(&r->ry_dir, &r->ry_ori, &b1);
+  vector_dot(&r->ry_dir, &s->sp_pos, &b2);
+  vector_dot(&r->ry_ori, &r->ry_ori, &c1);
+  vector_dot(&s->sp_pos, &r->ry_ori, &c2);
+  vector_dot(&s->sp_pos, &s->sp_pos, &c3);
 
-  /* v = sp_pos - ry_ori */
-  vector_copy(&v, &s->sp_pos);
-  vector_sub(&v, &r->ry_ori);
+  b = (2.0f * b1) - (2.0f * b2);
+  c = c1 - (2.0f * c2) + c3 - (s->sp_rad * s->sp_rad);
 
-  /* b = v . ry_dir */
-  vector_dot(&v, &r->ry_ori, &b);
-
-  /* o = v . v */
-  vector_dot(&v, &v, &o);
-
-  det = b * b * o * s->sp_rad * s->sp_rad;
-  if (det < 0.0f)
-    return;
-  det = sqrtf(det);
-
-  dist = b - det;
-  if (dist > 0.0001f) {
-    *t = dist;
+  if (a == 0.0f) {
+    *t = - c / b;
     return;
   }
 
-  dist = b + det;
-  if (dist > 0.0001f) {
-    *t = dist;
+  d = b * b - 4.0f * a * c;
+  if (d < 0.0f)
+    return;
+
+  /* Since the square root of a number is always positive, we can work
+   * under the assumption that t2 is less than t1. */
+  t1 = (-b + sqrtf(d)) / (2.0f * a);
+  t2 = (-b - sqrtf(d)) / (2.0f * a);
+
+  if (t2 > 0.0f) {
+    *t = t2;
+    return;
+  }
+
+  if (t1 > 0.0f) {
+    *t = t1;
     return;
   }
 }
