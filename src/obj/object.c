@@ -1,23 +1,31 @@
 #include "obj/object.h"
-#include "obj/sphere.h"
 #include "obj/plane.h"
+#include "obj/sphere.h"
+#include "obj/triangle.h"
+
+typedef void (*isect_func)(void*,ray*,float*);
+typedef void (*norm_func)(void*,vector*,vector*);
 
 void
 object_intersect(object* o, ray* r, float* t)
 {
-  if (o->ob_gt == OBJ_SPHERE)
-    sphere_intersect(o->ob_geo, r, t);
+  isect_func fns[3] = {
+    (isect_func)sphere_intersect,
+    (isect_func)plane_intersect,
+    (isect_func)triangle_intersect
+  };
 
-  if (o->ob_gt == OBJ_PLANE)
-    plane_intersect(o->ob_geo, r, t);
+  fns[o->ob_gt](o->ob_geo, r, t);
 }
 
 void
 object_normal(object* o, vector* p, vector* n)
 {
-  if (o->ob_gt == OBJ_SPHERE)
-    sphere_normal(o->ob_geo, p, n);
+  norm_func fns[3] = {
+    (norm_func)sphere_normal,
+    (norm_func)plane_normal,
+    (norm_func)triangle_normal,
+  };
 
-  if (o->ob_gt == OBJ_PLANE)
-    plane_normal(o->ob_geo, p, n);
+  fns[o->ob_gt](o->ob_geo, p, n);
 }

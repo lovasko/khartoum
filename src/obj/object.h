@@ -4,8 +4,9 @@
 #include "geom/ray.h"
 #include "geom/vector.h"
 
-#define OBJ_SPHERE 0
-#define OBJ_PLANE  1
+#define OBJ_SPHERE   0
+#define OBJ_PLANE    1
+#define OBJ_TRIANGLE 2
 
 typedef struct object {
   void* ob_geo; /** Object geometry.      */
