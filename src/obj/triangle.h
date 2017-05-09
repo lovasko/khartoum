@@ -5,9 +5,9 @@
 #include "geom/ray.h"
 
 typedef struct triangle {
-  vector tr_a; /** Point A. */
-  vector tr_b; /** Point B. */
-  vector tr_c; /** Point C. */
+  vector tr_a; /**< Point A. */
+  vector tr_b; /**< Point B. */
+  vector tr_c; /**< Point C. */
 } triangle;
 
 void triangle_intersect(triangle* x, ray* r, float* t);
