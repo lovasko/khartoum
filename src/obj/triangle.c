@@ -66,8 +66,8 @@ triangle_normal(triangle* x, vector* p, vector* n)
   vector_copy(&e1, &x->tr_a);
   vector_sub(&e1, &x->tr_b);
 
-  vector_copy(&e1, &x->tr_a);
-  vector_sub(&e1, &x->tr_b);
+  vector_copy(&e2, &x->tr_a);
+  vector_sub(&e2, &x->tr_c);
 
   vector_cross(n, &e1, &e2);
   vector_norm(n);
