@@ -4,14 +4,15 @@ WARNINGS=-Wall -Wextra -Weverything
 CFLAGS=-Ofast -fPIC -Isrc $(STANDARDS) $(WARNINGS)
 LDFLAGS=-lm
 EXECUTABLE=bin/run
-OBJECTS=obj/cam_persp.o   \
-        obj/geom_ray.o    \
-        obj/geom_vector.o \
-        obj/main.o        \
-        obj/obj_object.o  \
-        obj/obj_plane.o   \
-        obj/obj_sphere.o  \
-        obj/proc_debug.o  \
+OBJECTS=obj/cam_persp.o    \
+        obj/geom_ray.o     \
+        obj/geom_vector.o  \
+        obj/main.o         \
+        obj/obj_object.o   \
+        obj/obj_plane.o    \
+        obj/obj_sphere.o   \
+        obj/obj_triangle.o \
+        obj/proc_debug.o   \
         obj/scene_array.o
 
 all: bin/run
@@ -42,6 +43,9 @@ obj/obj_plane.o: src/obj/plane.c
 
 obj/obj_sphere.o: src/obj/sphere.c
 	$(CC) $(CFLAGS) -c src/obj/sphere.c -o obj/obj_sphere.o
+
+obj/obj_triangle.o: src/obj/triangle.c
+	$(CC) $(CFLAGS) -c src/obj/triangle.c -o obj/obj_triangle.o
 
 obj/proc_debug.o: src/proc/debug.c
 	$(CC) $(CFLAGS) -c src/proc/debug.c -o obj/proc_debug.o
