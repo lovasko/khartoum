@@ -10,10 +10,10 @@ typedef struct ray {
 
 /** Get a point along the ray.
   *
+  * @param[out] p resulting point
   * @param[in]  r ray
   * @param[in]  t direction multiplier
-  * @param[out] p resulting point
 **/
-void ray_point(ray* r, float t, vector* p);
+void ray_point(vector* p, const ray* r, const float t);
 
 #endif

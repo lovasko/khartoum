@@ -1,7 +1,7 @@
 #include "geom/ray.h"
 
 void
-ray_point(ray* r, float t, vector* p)
+ray_point(vector* p, const ray* r, const float t)
 {
   vector_copy(p, &r->ry_dir);
   vector_mul(p, t);

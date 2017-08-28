@@ -10,7 +10,7 @@ typedef struct plane {
 } plane;
 
 /* Ray/plane intersection. */
-void plane_intersect(plane* p, ray* r, float* t);
-void plane_normal(plane* s, vector* p, vector* n);
+void plane_intersect(float* t, const plane* p, const ray* r);
+void plane_normal(vector* n, const plane* s, const vector* p);
 
 #endif

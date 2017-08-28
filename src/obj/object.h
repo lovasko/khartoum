@@ -16,9 +16,9 @@ typedef struct object {
 } object;
 
 /* Object/ray intersection. */
-void object_intersect(object* o, ray* r, float* t);
+void object_intersect(float* t, const object* o, const ray* r);
 
 /* Intersection normal computation. */
-void object_normal(object* o, vector* p, vector* n);
+void object_normal(vector* n, const object* o, const vector* p);
 
 #endif

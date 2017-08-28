@@ -5,6 +5,9 @@
 #include "geom/isect.h"
 #include "obj/object.h"
 
-void scene_array_intersect(object* objs, unsigned int nobjs, ray* r, isect* i);
+void scene_array_intersect(isect* i,
+                           const object* objs,
+                           const size_t nobjs,
+                           const ray* r);
 
 #endif

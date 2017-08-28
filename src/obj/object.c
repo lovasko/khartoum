@@ -3,11 +3,11 @@
 #include "obj/sphere.h"
 #include "obj/triangle.h"
 
-typedef void (*isect_func)(void*,ray*,float*);
-typedef void (*norm_func)(void*,vector*,vector*);
+typedef void (*isect_func)(float*,const void*,const ray*);
+typedef void (*norm_func)(vector*,const void*,const vector*);
 
 void
-object_intersect(object* o, ray* r, float* t)
+object_intersect(float* t, const object* o, const ray* r)
 {
   isect_func fns[3] = {
     (isect_func)sphere_intersect,
@@ -15,11 +15,11 @@ object_intersect(object* o, ray* r, float* t)
     (isect_func)triangle_intersect
   };
 
-  fns[o->ob_gt](o->ob_geo, r, t);
+  fns[o->ob_gt](t, o->ob_geo, r);
 }
 
 void
-object_normal(object* o, vector* p, vector* n)
+object_normal(vector* n, const object* o, const vector* p)
 {
   norm_func fns[3] = {
     (norm_func)sphere_normal,
@@ -27,5 +27,5 @@ object_normal(object* o, vector* p, vector* n)
     (norm_func)triangle_normal,
   };
 
-  fns[o->ob_gt](o->ob_geo, p, n);
+  fns[o->ob_gt](n, o->ob_geo, p);
 }

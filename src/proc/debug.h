@@ -5,6 +5,6 @@
 #include "geom/ray.h"
 #include "geom/vector.h"
 
-void proc_debug_compute(ray* r, isect* i, vector* c);
+void proc_debug_compute(vector* c, const ray* r, const isect* i);
 
 #endif

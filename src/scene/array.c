@@ -7,27 +7,30 @@
 #include "scene/array.h"
 
 void
-scene_array_intersect(object* objs, unsigned int nobjs, ray* r, isect* i)
+scene_array_intersect(isect* i,
+                      const object* objs,
+                      const size_t nobjs,
+                      const ray* r)
 {
-  unsigned int k;
+  size_t k;
   float t;   /* Ray intersection parameter. */
-  object* o; /* Intersecting object. */
+  size_t oidx; /* Intersecting object index. */
   vector p;  /* Ray intersection point. */
 
   t = 0.0f;
-  o = NULL;
+  oidx = 0;
 
   i->is_t = FLT_MAX;
   for (k = 0; k < nobjs; k++) {
-    object_intersect(&objs[k], r, &t);
+    object_intersect(&t, &objs[k], r);
     if (t > 0.0f && t < i->is_t) {
-      o = &objs[k];
+      oidx = k;
       i->is_t = t;
     }
   }
 
   if (i->is_t < FLT_MAX) {
-    ray_point(r, i->is_t, &p);
-    object_normal(o, &p, &i->is_nor);
+    ray_point(&p, r, i->is_t);
+    object_normal(&i->is_nor, &objs[oidx], &p);
   }
 }

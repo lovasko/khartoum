@@ -10,7 +10,7 @@ typedef struct triangle {
   vector tr_c; /**< Point C. */
 } triangle;
 
-void triangle_intersect(triangle* x, ray* r, float* t);
-void triangle_normal(triangle* x, vector* p, vector* n);
+void triangle_intersect(float* t, const triangle* x, const ray* r);
+void triangle_normal(vector* n, const triangle* x, const vector* p);
 
 #endif

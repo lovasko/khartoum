@@ -3,7 +3,7 @@
 #include "cam/persp.h"
 
 void
-cam_persp_setup(persp* c, float ratio)
+cam_persp_setup(persp* c, const float ratio)
 {
   vector left;
   float width;
@@ -23,7 +23,7 @@ cam_persp_setup(persp* c, float ratio)
 }
 
 void
-cam_persp_primary(persp* c, float x, float y, ray* r)
+cam_persp_primary(ray* r, const persp* c, const float x, const float y)
 {
   vector dir;
   vector xdir;

@@ -10,7 +10,7 @@ typedef struct sphere {
 } sphere;
 
 /* Ray/sphere intersection. */
-void sphere_intersect(sphere* s, ray* r, float* t);
-void sphere_normal(sphere* s, vector* p, vector* n);
+void sphere_intersect(float* t, const sphere* s, const ray* r);
+void sphere_normal(vector* n, const sphere* s, const vector* p);
 
 #endif

@@ -2,12 +2,12 @@
 
 /** Compute the point of intersection between a triangle and a ray.
   *
+  * @param[out] t distance on the ray
   * @param[in]  x triangle
   * @param[in]  r ray
-  * @param[out] t distance on the ray
 **/
 void
-triangle_intersect(triangle* x, ray* r, float* t)
+triangle_intersect(float* t, const triangle* x, const ray* r)
 {
   vector e1;
   vector e2;
@@ -51,12 +51,12 @@ triangle_intersect(triangle* x, ray* r, float* t)
 
 /** Compute the normal vector of the triangle intersection.
   *
+  * @param[out] n normal vector
   * @param[in]  x triangle
   * @param[in]  p point of intersection
-  * @param[out] n normal vector
 **/
 void
-triangle_normal(triangle* x, vector* p, vector* n)
+triangle_normal(vector* n, const triangle* x, const vector* p)
 {
   vector e1;
   vector e2;

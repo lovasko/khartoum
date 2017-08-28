@@ -110,9 +110,9 @@ main(void)
 
   for (y = 0; y < 500; y++) {
     for (x = 0; x < 500; x++) {
-      cam_persp_primary(&cam, coord(x, 500), coord(y, 500), &r);
-      scene_array_intersect(objs, 4, &r, &i);
-      proc_debug_compute(&r, &i, &c);
+      cam_persp_primary(&r, &cam, coord(x, 500), coord(y, 500));
+      scene_array_intersect(&i, objs, 4, &r);
+      proc_debug_compute(&c, &r, &i);
       fprintf(output, "%u %u %u ",
              scale(c.vc_x, 255),
              scale(c.vc_y, 255),

@@ -15,9 +15,9 @@ typedef struct persp {
 } persp;
 
 /* Initialise the camera. */
-void cam_persp_setup(persp* c, float ratio);
+void cam_persp_setup(persp* c, const float ratio);
 
 /* Primary ray casting from the camera. */
-void cam_persp_primary(persp* c, float x, float y, ray* r);
+void cam_persp_primary(ray* r, const persp* c, const float x, const float y);
 
 #endif

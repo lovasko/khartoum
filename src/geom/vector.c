@@ -3,7 +3,7 @@
 #include "geom/vector.h"
 
 void
-vector_init(vector* v, float x, float y, float z)
+vector_init(vector* v, const float x, const float y, const float z)
 {
   v->vc_x = x;
   v->vc_y = y;
@@ -11,7 +11,7 @@ vector_init(vector* v, float x, float y, float z)
 }
 
 void
-vector_repeat(vector* v, float xyz)
+vector_repeat(vector* v, const float xyz)
 {
   v->vc_x = xyz;
   v->vc_y = xyz;
@@ -19,7 +19,7 @@ vector_repeat(vector* v, float xyz)
 }
 
 void
-vector_copy(vector* dst, vector* src)
+vector_copy(vector* dst, const vector* src)
 {
   dst->vc_x = src->vc_x;
   dst->vc_y = src->vc_y;
@@ -27,7 +27,7 @@ vector_copy(vector* dst, vector* src)
 }
 
 void
-vector_add(vector* v, vector* u)
+vector_add(vector* v, const vector* u)
 {
   v->vc_x += u->vc_x;
   v->vc_y += u->vc_y;
@@ -35,7 +35,7 @@ vector_add(vector* v, vector* u)
 }
 
 void
-vector_sub(vector* v, vector* u)
+vector_sub(vector* v, const vector* u)
 {
   v->vc_x -= u->vc_x;
   v->vc_y -= u->vc_y;
@@ -43,7 +43,7 @@ vector_sub(vector* v, vector* u)
 }
 
 void
-vector_mul(vector* v, float s)
+vector_mul(vector* v, const float s)
 {
   v->vc_x *= s;
   v->vc_y *= s;
@@ -64,7 +64,7 @@ vector_norm(vector* v)
 }
 
 void
-vector_dot(float* d, vector* v, vector* u)
+vector_dot(float* d, const vector* v, const vector* u)
 {
   *d = v->vc_x * u->vc_x
      + v->vc_y * u->vc_y
@@ -72,7 +72,7 @@ vector_dot(float* d, vector* v, vector* u)
 }
 
 void
-vector_cross(vector*c, vector* v, vector* u)
+vector_cross(vector*c, const vector* v, const vector* u)
 {
   c->vc_x = v->vc_y * u->vc_z - v->vc_z * u->vc_y;
   c->vc_y = v->vc_z * u->vc_x - v->vc_x * u->vc_z;

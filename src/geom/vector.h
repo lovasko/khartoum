@@ -8,18 +8,18 @@ typedef struct vector {
 } vector;
 
 /* General-purpose functions. */
-void vector_init(vector* v, float x, float y, float z);
-void vector_repeat(vector* v, float xyz);
-void vector_copy(vector* dst, vector* src);
+void vector_init(vector* v, const float x, const float y, const float z);
+void vector_repeat(vector* v, const float xyz);
+void vector_copy(vector* dst, const vector* src);
 
 /* Arithmetic operations. */
-void vector_add(vector* v, vector* u);
-void vector_sub(vector* v, vector* u);
-void vector_mul(vector* v, float s);
+void vector_add(vector* v, const vector* u);
+void vector_sub(vector* v, const vector* u);
+void vector_mul(vector* v, const float s);
 void vector_norm(vector* v);
 
 /* Vector products. */
-void vector_dot(float* d, vector* v, vector* u);
-void vector_cross(vector* c, vector* v, vector* u);
+void vector_dot(float* d, const vector* v, const vector* u);
+void vector_cross(vector* c, const vector* v, const vector* u);
 
 #endif
