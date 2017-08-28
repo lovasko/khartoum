@@ -2,8 +2,8 @@
 [![Build Status](https://travis-ci.org/lovasko/ziar.svg?branch=master)](https://travis-ci.org/lovasko/ziar)
 
 ## Introduction
-Ziar is a path tracer written in C89, intended to be ran on all Unices and
-devices.
+Ziar is a path tracer written in C99, intended to run on all POSIX-compliant
+operating systems.
 
 ## License
 This project is licensed under the terms of the 2-clause BSD
