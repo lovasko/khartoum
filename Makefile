@@ -1,7 +1,7 @@
 CC=clang
 STANDARDS=-std=c99
 WARNINGS=-Wall -Wextra
-CFLAGS=-O3 -fPIC -Isrc $(STANDARDS) $(WARNINGS)
+CFLAGS=-O3 -Isrc $(STANDARDS) $(WARNINGS)
 LDFLAGS=-lm
 EXECUTABLE=bin/run
 OBJECTS=obj/cam_persp.o    \
@@ -18,7 +18,7 @@ OBJECTS=obj/cam_persp.o    \
 all: bin/run
 
 bin/run: $(OBJECTS)
-	$(CC) -fPIC -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
+	$(CC) -o $(EXECUTABLE) $(OBJECTS) $(LDFLAGS)
 
 clean:
 	rm $(OBJECTS) $(EXECUTABLE)
