@@ -7,7 +7,7 @@
 /* Perspective camera. */
 typedef struct persp {
   vector ps_up;   /** Up direction.      */
-  vector ps_for;  /** Look-at direction. TODO: rename to ps_fwd */
+  vector ps_fwd;  /** Forward direction. */
   vector ps_pos;  /** Camera position.   */
   vector ps_hst;  /** Horizontal step.   */
   vector ps_vst;  /** Vertical step.     */

@@ -9,7 +9,7 @@ cam_persp_setup(persp* c, const float ratio)
   float width;
   float height;
 
-  vector_cross(&left, &c->ps_for, &c->ps_up);
+  vector_cross(&left, &c->ps_fwd, &c->ps_up);
   vector_norm(&left);
 
   width = 1.0f / tanf(c->ps_fov / 2.0f);
@@ -38,7 +38,7 @@ cam_persp_primary(ray* r, const persp* c, const float x, const float y)
   vector_repeat(&dir, 0.0f);
   vector_add(&dir, &xdir);
   vector_add(&dir, &ydir);
-  vector_add(&dir, &c->ps_for);
+  vector_add(&dir, &c->ps_fwd);
   vector_norm(&dir);
 
   vector_copy(&r->ry_ori, &c->ps_pos);
