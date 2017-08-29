@@ -12,7 +12,7 @@ typedef void (*norm_func)(vector*,const void*,const vector*);
 void
 object_intersect(float* t, const object* o, const ray* r)
 {
-  isect_func fns[3] = {
+  static const isect_func fns[] = {
     (isect_func)sphere_intersect,
     (isect_func)plane_intersect,
     (isect_func)triangle_intersect
@@ -24,7 +24,7 @@ object_intersect(float* t, const object* o, const ray* r)
 void
 object_normal(vector* n, const object* o, const vector* p)
 {
-  norm_func fns[3] = {
+  static const norm_func fns[] = {
     (norm_func)sphere_normal,
     (norm_func)plane_normal,
     (norm_func)triangle_normal,
