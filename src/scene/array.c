@@ -13,9 +13,9 @@ scene_array_intersect(isect* i,
                       const ray* r)
 {
   size_t k;
-  float t;   /* Ray intersection parameter. */
-  size_t oidx; /* Intersecting object index. */
-  vector p;  /* Ray intersection point. */
+  float t;     // Ray intersection parameter.
+  size_t oidx; // Intersecting object index.
+  vector p;    // Ray intersection point.
 
   t = 0.0f;
   oidx = 0;

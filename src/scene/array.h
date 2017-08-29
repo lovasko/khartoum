@@ -5,6 +5,11 @@
 #include "geom/isect.h"
 #include "obj/object.h"
 
+/// Traverse an array of objects and find the closest intersection.
+/// @param[out] i     object intersection
+/// @param[in]  objs  array of objects
+/// @param[in]  nobjs length of the object array
+/// @param[in]  r     intersecting ray
 void scene_array_intersect(isect* i,
                            const object* objs,
                            const size_t nobjs,

@@ -3,7 +3,10 @@
 #include "obj/sphere.h"
 #include "obj/triangle.h"
 
+/// Virtual intersection function.
 typedef void (*isect_func)(float*,const void*,const ray*);
+
+/// Virtual normal vector computation function.
 typedef void (*norm_func)(vector*,const void*,const vector*);
 
 void

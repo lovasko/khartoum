@@ -1,11 +1,5 @@
 #include "obj/triangle.h"
 
-/** Compute the point of intersection between a triangle and a ray.
-  *
-  * @param[out] t distance on the ray
-  * @param[in]  x triangle
-  * @param[in]  r ray
-**/
 void
 triangle_intersect(float* t, const triangle* x, const ray* r)
 {
@@ -49,12 +43,6 @@ triangle_intersect(float* t, const triangle* x, const ray* r)
   *t *= idet;
 }
 
-/** Compute the normal vector of the triangle intersection.
-  *
-  * @param[out] n normal vector
-  * @param[in]  x triangle
-  * @param[in]  p point of intersection
-**/
 void
 triangle_normal(vector* n, const triangle* x, const vector* p)
 {

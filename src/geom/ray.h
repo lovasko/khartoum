@@ -3,17 +3,16 @@
 
 #include "geom/vector.h"
 
+/// Ray.
 typedef struct ray {
-  vector ry_ori; /**< Ray origin.    */
-  vector ry_dir; /**< Ray direction. */
+  vector ry_ori; ///< Point of origin.
+  vector ry_dir; ///< Direction.
 } ray;
 
-/** Get a point along the ray.
-  *
-  * @param[out] p resulting point
-  * @param[in]  r ray
-  * @param[in]  t direction multiplier
-**/
+/// Get a point along the ray.
+/// @param[out] p point on the ray
+/// @param[in]  r ray
+/// @param[in]  t ray parameter
 void ray_point(vector* p, const ray* r, const float t);
 
 #endif

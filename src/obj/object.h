@@ -8,17 +8,24 @@
 #define OBJ_PLANE    1
 #define OBJ_TRIANGLE 2
 
+/// Generic interface for all geometry objects.
 typedef struct object {
-  void* ob_geo; /** Object geometry.      */
-  void* ob_mat; /** Object material.      */
-  int   ob_gt;  /** Object geometry type. */
-  int   ob_mt;  /** Object material type. */
+  void* ob_geo; ///< Geometry.
+  void* ob_mat; ///< Material.
+  int   ob_gt;  ///< Geometry type.
+  int   ob_mt;  ///< Material type.
 } object;
 
-/* Object/ray intersection. */
+/// Object/ray intersection.
+/// @param[out] t ray parameter
+/// @param[in]  o object
+/// @param[in]  r ray
 void object_intersect(float* t, const object* o, const ray* r);
 
-/* Intersection normal computation. */
+/// Intersection normal computation.
+/// @param[out] n normal vector
+/// @param[in]  o object
+/// @param[in]  p point of intersection
 void object_normal(vector* n, const object* o, const vector* p);
 
 #endif
