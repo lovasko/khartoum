@@ -3,6 +3,7 @@
 
 #include "obj/sphere.h"
 
+
 void
 sphere_intersect(
         float*  restrict t,

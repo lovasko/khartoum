@@ -6,6 +6,7 @@
 #include "obj/object.h"
 #include "scene/array.h"
 
+
 void
 scene_array_intersect(
         isect*  restrict i,

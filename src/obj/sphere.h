@@ -4,6 +4,7 @@
 #include "geom/vector.h"
 #include "geom/ray.h"
 
+
 /// Sphere.
 typedef struct sphere {
   vector sp_pos; ///< Position.

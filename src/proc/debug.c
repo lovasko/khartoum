@@ -4,6 +4,7 @@
 #include "geom/isect.h"
 #include "proc/debug.h"
 
+
 void
 proc_debug_compute(
         vector* restrict c,

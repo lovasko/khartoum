@@ -4,6 +4,7 @@
 #include "geom/vector.h"
 #include "geom/ray.h"
 
+
 /// Perspective camera.
 typedef struct persp {
   vector ps_up;  ///< Up direction.

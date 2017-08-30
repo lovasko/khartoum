@@ -2,6 +2,7 @@
 
 #include "cam/persp.h"
 
+
 void
 cam_persp_setup(persp* c, const float ratio)
 {

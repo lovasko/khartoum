@@ -13,6 +13,7 @@
 #include "proc/debug.h"
 #include "scene/array.h"
 
+
 /* Scene camera. */
 static persp cam;
 

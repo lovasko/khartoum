@@ -1,5 +1,6 @@
 #include "geom/ray.h"
 
+
 void
 ray_point(vector* restrict p, const ray* restrict r, const float t)
 {

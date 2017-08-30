@@ -1,5 +1,6 @@
 #include "obj/plane.h"
 
+
 void
 plane_intersect(
         float* restrict t,

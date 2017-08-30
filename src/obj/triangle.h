@@ -4,7 +4,8 @@
 #include "geom/vector.h"
 #include "geom/ray.h"
 
-/// Triangle geometry.
+
+/// Triangle.
 typedef struct triangle {
   vector tr_a; ///< Point A.
   vector tr_b; ///< Point B.

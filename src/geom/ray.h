@@ -3,6 +3,7 @@
 
 #include "geom/vector.h"
 
+
 /// Ray.
 typedef struct ray {
   vector ry_ori; ///< Point of origin.

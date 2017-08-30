@@ -1,5 +1,6 @@
 #include "obj/triangle.h"
 
+
 void
 triangle_intersect(
         float*    restrict t,

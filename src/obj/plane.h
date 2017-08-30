@@ -4,7 +4,8 @@
 #include "geom/vector.h"
 #include "geom/ray.h"
 
-/// Infinite plane geometry.
+
+/// Infinite plane.
 typedef struct plane {
   vector pl_pos; ///< Plane position.
   vector pl_nor; ///< Plane normal vector.

@@ -2,6 +2,7 @@
 
 #include "geom/vector.h"
 
+
 void
 vector_init(vector* v, const float x, const float y, const float z)
 {

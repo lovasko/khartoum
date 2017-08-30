@@ -4,11 +4,12 @@
 #include "geom/ray.h"
 #include "geom/vector.h"
 
+
 #define OBJ_SPHERE   0
 #define OBJ_PLANE    1
 #define OBJ_TRIANGLE 2
 
-/// Generic interface for all geometry objects.
+/// Generic interface for all objects.
 typedef struct object {
   void* ob_geo; ///< Geometry.
   void* ob_mat; ///< Material.

@@ -3,6 +3,7 @@
 #include "obj/sphere.h"
 #include "obj/triangle.h"
 
+
 /// Virtual intersection function.
 typedef void (*isect_func)(
         float* restrict,

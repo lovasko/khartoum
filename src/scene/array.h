@@ -5,6 +5,7 @@
 #include "geom/isect.h"
 #include "obj/object.h"
 
+
 /// Traverse an array of objects and find the closest intersection.
 /// @param[out] i     object intersection
 /// @param[in]  objs  array of objects

@@ -5,6 +5,7 @@
 #include "geom/ray.h"
 #include "geom/vector.h"
 
+
 /// Produce the resulting color by computing the cosine of an angle between
 /// the incoming ray and normal vector in the object intersection.
 /// @param[out] c color
