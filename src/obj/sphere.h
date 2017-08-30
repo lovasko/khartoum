@@ -4,7 +4,7 @@
 #include "geom/vector.h"
 #include "geom/ray.h"
 
-/// Sphere geometry.
+/// Sphere.
 typedef struct sphere {
   vector sp_pos; ///< Position.
   float  sp_rad; ///< Radius.
@@ -14,12 +14,18 @@ typedef struct sphere {
 /// @param[out] t ray parameter
 /// @param[in]  s sphere
 /// @param[in]  r ray
-void sphere_intersect(float* t, const sphere* s, const ray* r);
+void sphere_intersect(
+        float*  restrict t,
+  const sphere* restrict s,
+  const ray*    restrict r);
 
 /// Compute the normal vector in the point of intersection.
 /// @param[out] n normal vector
 /// @param[in]  s sphere
 /// @param[in]  p intersection point
-void sphere_normal(vector* n, const sphere* s, const vector* p);
+void sphere_normal(
+        vector* restrict n,
+  const sphere* restrict s,
+  const vector* restrict p);
 
 #endif

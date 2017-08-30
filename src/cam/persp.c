@@ -23,7 +23,11 @@ cam_persp_setup(persp* c, const float ratio)
 }
 
 void
-cam_persp_primary(ray* r, const persp* c, const float x, const float y)
+cam_persp_primary(
+        ray*   restrict r,
+  const persp* restrict c,
+  const float           x,
+  const float           y)
 {
   vector dir;
   vector xdir;

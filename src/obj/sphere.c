@@ -4,7 +4,10 @@
 #include "obj/sphere.h"
 
 void
-sphere_intersect(float* t, const sphere* s, const ray* r)
+sphere_intersect(
+        float*  restrict t,
+  const sphere* restrict s,
+  const ray*    restrict r)
 {
   float a;
   float b;
@@ -55,7 +58,10 @@ sphere_intersect(float* t, const sphere* s, const ray* r)
 }
 
 void
-sphere_normal(vector* n, const sphere* s, const vector* p)
+sphere_normal(
+        vector* restrict n,
+  const sphere* restrict s,
+  const vector* restrict p)
 {
   vector_copy(n, p);
   vector_sub(n, &s->sp_pos);

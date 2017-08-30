@@ -10,6 +10,9 @@
 /// @param[out] c color
 /// @param[in]  r ray
 /// @param[in]  i object intersection
-void proc_debug_compute(vector* c, const ray* r, const isect* i);
+void proc_debug_compute(
+        vector* restrict c,
+  const ray*    restrict r,
+  const isect*  restrict i);
 
 #endif

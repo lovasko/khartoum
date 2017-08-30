@@ -24,6 +24,10 @@ void cam_persp_setup(persp* c, const float r);
 /// @param[in]  c camera
 /// @param[in]  x image X coordinate (0.0 - 1.0)
 /// @param[in]  y image Y coordinate (0.0 - 1.0)
-void cam_persp_primary(ray* r, const persp* c, const float x, const float y);
+void cam_persp_primary(
+        ray*   restrict r,
+  const persp* restrict c,
+  const float           x,
+  const float           y);
 
 #endif

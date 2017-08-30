@@ -14,12 +14,18 @@ typedef struct plane {
 /// @param[out] t ray parameter
 /// @param[in]  p plane
 /// @param[in]  r ray
-void plane_intersect(float* t, const plane* p, const ray* r);
+void plane_intersect(
+        float* restrict t,
+  const plane* restrict p,
+  const ray*   restrict r);
 
 /// Compute the normal vector in the point of intersection.
 /// @param[out] n normal vector
 /// @param[in]  s plane
 /// @param[in]  p intersection point
-void plane_normal(vector* n, const plane* s, const vector* p);
+void plane_normal(
+        vector* restrict n,
+  const plane*  restrict s,
+  const vector* restrict p);
 
 #endif

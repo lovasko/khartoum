@@ -7,10 +7,11 @@
 #include "scene/array.h"
 
 void
-scene_array_intersect(isect* i,
-                      const object* objs,
-                      const size_t nobjs,
-                      const ray* r)
+scene_array_intersect(
+        isect*  restrict i,
+  const object* restrict objs,
+  const size_t           nobjs,
+  const ray*    restrict r)
 {
   size_t k;
   float t;     // Ray intersection parameter.

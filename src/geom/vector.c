@@ -19,7 +19,7 @@ vector_repeat(vector* v, const float xyz)
 }
 
 void
-vector_copy(vector* dst, const vector* src)
+vector_copy(vector* restrict dst, const vector* restrict src)
 {
   dst->vc_x = src->vc_x;
   dst->vc_y = src->vc_y;
@@ -27,7 +27,7 @@ vector_copy(vector* dst, const vector* src)
 }
 
 void
-vector_add(vector* v, const vector* u)
+vector_add(vector* restrict v, const vector* restrict u)
 {
   v->vc_x += u->vc_x;
   v->vc_y += u->vc_y;
@@ -35,7 +35,7 @@ vector_add(vector* v, const vector* u)
 }
 
 void
-vector_sub(vector* v, const vector* u)
+vector_sub(vector* restrict v, const vector* restrict u)
 {
   v->vc_x -= u->vc_x;
   v->vc_y -= u->vc_y;
@@ -64,7 +64,10 @@ vector_norm(vector* v)
 }
 
 void
-vector_dot(float* d, const vector* v, const vector* u)
+vector_dot(
+        float*  restrict d,
+  const vector* restrict v,
+  const vector* restrict u)
 {
   *d = v->vc_x * u->vc_x
      + v->vc_y * u->vc_y
@@ -72,7 +75,10 @@ vector_dot(float* d, const vector* v, const vector* u)
 }
 
 void
-vector_cross(vector*c, const vector* v, const vector* u)
+vector_cross(
+        vector* restrict c,
+  const vector* restrict v,
+  const vector* restrict u)
 {
   c->vc_x = v->vc_y * u->vc_z - v->vc_z * u->vc_y;
   c->vc_y = v->vc_z * u->vc_x - v->vc_x * u->vc_z;

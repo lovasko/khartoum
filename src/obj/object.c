@@ -4,13 +4,22 @@
 #include "obj/triangle.h"
 
 /// Virtual intersection function.
-typedef void (*isect_func)(float*,const void*,const ray*);
+typedef void (*isect_func)(
+        float* restrict,
+  const void*  restrict,
+  const ray*   restrict);
 
 /// Virtual normal vector computation function.
-typedef void (*norm_func)(vector*,const void*,const vector*);
+typedef void (*norm_func)(
+        vector* restrict,
+  const void*   restrict,
+  const vector* restrict);
 
 void
-object_intersect(float* t, const object* o, const ray* r)
+object_intersect(
+        float*  restrict t,
+  const object* restrict o,
+  const ray*    restrict r)
 {
   static const isect_func fns[] = {
     (isect_func)sphere_intersect,
@@ -22,7 +31,10 @@ object_intersect(float* t, const object* o, const ray* r)
 }
 
 void
-object_normal(vector* n, const object* o, const vector* p)
+object_normal(
+        vector* restrict n,
+  const object* restrict o,
+  const vector* restrict p)
 {
   static const norm_func fns[] = {
     (norm_func)sphere_normal,

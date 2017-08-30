@@ -20,12 +20,18 @@ typedef struct object {
 /// @param[out] t ray parameter
 /// @param[in]  o object
 /// @param[in]  r ray
-void object_intersect(float* t, const object* o, const ray* r);
+void object_intersect(
+        float*  restrict t,
+  const object* restrict o,
+  const ray*    restrict r);
 
 /// Intersection normal computation.
 /// @param[out] n normal vector
 /// @param[in]  o object
 /// @param[in]  p point of intersection
-void object_normal(vector* n, const object* o, const vector* p);
+void object_normal(
+        vector* restrict n,
+  const object* restrict o,
+  const vector* restrict p);
 
 #endif

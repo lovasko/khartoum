@@ -5,7 +5,10 @@
 #include "proc/debug.h"
 
 void
-proc_debug_compute(vector* c, const ray* r, const isect* i)
+proc_debug_compute(
+        vector* restrict c,
+  const ray*    restrict r,
+  const isect*  restrict i)
 {
   float x;
 

@@ -23,17 +23,17 @@ void vector_repeat(vector* v, const float xyz);
 /// Copy contents of a vector to an another vector.
 /// @param[out] dst destination
 /// @param[in]  src source
-void vector_copy(vector* dst, const vector* src);
+void vector_copy(vector* restrict dst, const vector* restrict src);
 
 /// Add a vector to another one.
 /// @param[out] v base vector
 /// @param[in]  u vector to add
-void vector_add(vector* v, const vector* u);
+void vector_add(vector* restrict v, const vector* restrict u);
 
 /// Subtract a vector from another one.
 /// @param[out] v base vector
 /// @param[in]  u vector to subtract
-void vector_sub(vector* v, const vector* u);
+void vector_sub(vector* restrict v, const vector* restrict u);
 
 /// Multiply all vector components with a scalar.
 /// @param[out] v vector
@@ -48,12 +48,18 @@ void vector_norm(vector* v);
 /// @param[out] d dot product
 /// @param[in]  v first vector
 /// @param[in]  u second vector
-void vector_dot(float* d, const vector* v, const vector* u);
+void vector_dot(
+        float*  restrict d,
+  const vector* restrict v,
+  const vector* restrict u);
 
 /// Compute the "cross" product of two vectors.
 /// @param[out] c cross product
 /// @param[in]  v first vector
 /// @param[in]  u second vector
-void vector_cross(vector* c, const vector* v, const vector* u);
+void vector_cross(
+        vector* restrict c,
+  const vector* restrict v,
+  const vector* restrict u);
 
 #endif

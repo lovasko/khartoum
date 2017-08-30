@@ -10,9 +10,10 @@
 /// @param[in]  objs  array of objects
 /// @param[in]  nobjs length of the object array
 /// @param[in]  r     intersecting ray
-void scene_array_intersect(isect* i,
-                           const object* objs,
-                           const size_t nobjs,
-                           const ray* r);
+void scene_array_intersect(
+        isect*  restrict i,
+  const object* restrict objs,
+  const size_t           nobjs,
+  const ray*    restrict r);
 
 #endif

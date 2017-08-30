@@ -13,6 +13,6 @@ typedef struct ray {
 /// @param[out] p point on the ray
 /// @param[in]  r ray
 /// @param[in]  t ray parameter
-void ray_point(vector* p, const ray* r, const float t);
+void ray_point(vector* restrict p, const ray* restrict r, const float t);
 
 #endif

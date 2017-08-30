@@ -15,12 +15,18 @@ typedef struct triangle {
 /// @param[out] t ray parameter
 /// @param[in]  x triangle
 /// @param[in]  r ray
-void triangle_intersect(float* t, const triangle* x, const ray* r);
+void triangle_intersect(
+        float*    restrict t,
+  const triangle* restrict x,
+  const ray*      restrict r);
 
 /// Compute the normal vector in the point of intersection.
 /// @param[out] n normal vector
 /// @param[in]  x triangle
 /// @param[in]  p intersection point
-void triangle_normal(vector* n, const triangle* x, const vector* p);
+void triangle_normal(
+        vector*   restrict n,
+  const triangle* restrict x,
+  const vector*   restrict p);
 
 #endif

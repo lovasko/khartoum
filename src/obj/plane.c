@@ -1,7 +1,10 @@
 #include "obj/plane.h"
 
 void
-plane_intersect(float* t, const plane* p, const ray* r)
+plane_intersect(
+        float* restrict t,
+  const plane* restrict p,
+  const ray*   restrict r)
 {
   vector ori;
   float angle;
@@ -20,7 +23,10 @@ plane_intersect(float* t, const plane* p, const ray* r)
 }
 
 void
-plane_normal(vector* n, const plane* s, const vector* p)
+plane_normal(
+        vector* restrict n,
+  const plane*  restrict s,
+  const vector* restrict p)
 {
   (void)p;
   vector_copy(n, &s->pl_nor);

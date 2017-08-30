@@ -1,7 +1,10 @@
 #include "obj/triangle.h"
 
 void
-triangle_intersect(float* t, const triangle* x, const ray* r)
+triangle_intersect(
+        float*    restrict t,
+  const triangle* restrict x,
+  const ray*      restrict r)
 {
   vector e1;
   vector e2;
@@ -44,7 +47,10 @@ triangle_intersect(float* t, const triangle* x, const ray* r)
 }
 
 void
-triangle_normal(vector* n, const triangle* x, const vector* p)
+triangle_normal(
+        vector*   restrict n,
+  const triangle* restrict x,
+  const vector*   restrict p)
 {
   vector e1;
   vector e2;
