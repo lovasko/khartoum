@@ -27,7 +27,8 @@ scene_array_intersect(
     object_intersect(&t, &objs[k], r);
     if (t > 0.0f && t < i->is_t) {
       oidx = k;
-      i->is_t = t;
+      i->is_t   = t;
+      i->is_obj = &objs[k];
     }
   }
 
