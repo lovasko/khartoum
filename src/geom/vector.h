@@ -62,4 +62,9 @@ void vector_cross(
   const vector* restrict v,
   const vector* restrict u);
 
+/// Print the vector values to the standard output.
+/// @param[in] s debugging information
+/// @param[in] v vector
+void vector_print(const char* restrict s, const vector* restrict v);
+
 #endif

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <math.h>
 
 #include "geom/vector.h"
@@ -84,4 +85,10 @@ vector_cross(
   c->vc_x = v->vc_y * u->vc_z - v->vc_z * u->vc_y;
   c->vc_y = v->vc_z * u->vc_x - v->vc_x * u->vc_z;
   c->vc_z = v->vc_x * u->vc_y - v->vc_y * u->vc_x;
+}
+
+void
+vector_print(const char* restrict s, const vector* restrict v)
+{
+  printf("%s: %.3f %.3f %.3f\n", s, v->vc_x, v->vc_y, v->vc_z);
 }
