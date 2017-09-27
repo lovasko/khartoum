@@ -40,7 +40,7 @@ triangle_intersect(
   vector_cross(&q, &s, &e1);
   vector_dot(&v, &r->ry_dir, &q);
   v *= idet;
-  if (v > 0.0f || u + v > 1.0f)
+  if (v < 0.0f || u + v > 1.0f)
     return;
 
   vector_dot(t, &e2, &q);
@@ -58,11 +58,11 @@ triangle_normal(
 
   (void)p;
 
-  vector_copy(&e1, &x->tr_a);
-  vector_sub(&e1, &x->tr_b);
+  vector_copy(&e1, &x->tr_b);
+  vector_sub(&e1, &x->tr_a);
 
-  vector_copy(&e2, &x->tr_a);
-  vector_sub(&e2, &x->tr_c);
+  vector_copy(&e2, &x->tr_c);
+  vector_sub(&e2, &x->tr_a);
 
   vector_cross(n, &e1, &e2);
   vector_norm(n);
