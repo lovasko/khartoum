@@ -1,4 +1,4 @@
-CC=clang
+CC=cc
 STANDARDS=-std=c99
 WARNINGS=-Wall -Wextra -Werror
 OPTIMIZATION=-O3
